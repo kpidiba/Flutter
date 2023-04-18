@@ -12,6 +12,7 @@ class Test extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: "Learning",
         themeMode: ThemeMode.system,
-        home: FormD());
+        home: FormD()
+        );
   }
 }
