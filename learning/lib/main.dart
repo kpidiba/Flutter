@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learning/screens/Dashboard.dart';
-import 'package:learning/screens/dButton.dart';
-import 'package:learning/screens/dContainer.dart';
+import 'package:learning/screens/parts/form.dart';
 
 void main() => runApp(const Test());
 
@@ -11,10 +9,9 @@ class Test extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Learning",
-      themeMode: ThemeMode.system,
-      home: Dcontainer()
-    );
+        debugShowCheckedModeBanner: false,
+        title: "Learning",
+        themeMode: ThemeMode.system,
+        home: FormD());
   }
 }
