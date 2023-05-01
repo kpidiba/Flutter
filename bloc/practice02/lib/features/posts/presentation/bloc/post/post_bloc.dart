@@ -25,22 +25,22 @@ class PostBloc extends Bloc<PostEvent, PostState> {
     });
   }
 
-    PostState _mapFailureOrPostsToState(Either<Failure, List<Post>> either) {
-      return either.fold(
-          (failure) => ErrorPostState(message: _mapFailure(failure)),
-          (posts) => LoadedPostState(posts: posts));
-    }
+  PostState _mapFailureOrPostsToState(Either<Failure, List<Post>> either) {
+    return either.fold(
+        (failure) => ErrorPostState(message: _mapFailure(failure)),
+        (posts) => LoadedPostState(posts: posts));
+  }
 
-    String _mapFailure(Failure failure) {
-      switch (failure.runtimeType) {
-        case ServerFailure:
-          return SERVER_FAILURE_MESSAGE;
-        case EmptyCacheFailure:
-          return EMPTY_CACHE_FAILURE_MESSAGE;
-        case OfflineFailure:
-          return OFFLINE_FAILURE_MESSAGE;
-        default:
-          return "Unexcepted Error,Please try again later";
-      }
+  String _mapFailure(Failure failure) {
+    switch (failure.runtimeType) {
+      case ServerFailure:
+        return SERVER_FAILURE_MESSAGE;
+      case EmptyCacheFailure:
+        return EMPTY_CACHE_FAILURE_MESSAGE;
+      case OfflineFailure:
+        return OFFLINE_FAILURE_MESSAGE;
+      default:
+        return "Unexcepted Error,Please try again later";
     }
+  }
 }

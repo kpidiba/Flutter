@@ -22,13 +22,13 @@ class PostLocalDataSourceImpl implements PostLocalDataSource {
     List postModelsToJson = postModels
         .map<Map<String, dynamic>>((postModels) => postModels.toJson())
         .toList();
-    sharedPreferences.setString(DATA, jsonEncode(postModelsToJson));
+    sharedPreferences.setString(DATA, json.encode(postModelsToJson));
     return Future.value(unit);
   }
 
   @override
   Future<List<PostModel>> getCachePosts() {
-    final jsonString = sharedPreferences.getString(DATA );
+    final jsonString = sharedPreferences.getString(DATA);
     if (jsonString == null) {
       List decodeJsonData = json.decode(jsonString!);
       List<PostModel> jsonToPostModels = decodeJsonData
