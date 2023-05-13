@@ -6,14 +6,15 @@ import 'package:practice02/features/posts/presentation/bloc/post/post_bloc.dart'
 import 'package:practice02/features/posts/presentation/pages/posts_page.dart';
 import 'injection_container.dart' as di;
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await di.init();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -26,6 +27,6 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: appTheme,
             title: 'Posts App',
-            home: PostPage()));
+            home: const PostPage()));
   }
 }

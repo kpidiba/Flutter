@@ -22,7 +22,7 @@ Future<void> init() async {
 
 // Bloc
 
-  sl.registerFactory(() => PostBloc(getAllPosts: sl()));
+  sl.registerFactory(() => PostBloc(getAllPosts: sl(),));
   sl.registerFactory(() => CrudBloc(
       addPostUseCase: sl(), updatePostUseCase: sl(), deletePostUseCase: sl()));
 

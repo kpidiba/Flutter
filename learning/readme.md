@@ -640,7 +640,30 @@ Stack(
 - **RadioButton**
 
 ```dart
-
+Row(
+            children: [
+              Expanded(
+                child: RadioListTile(
+                    contentPadding: const EdgeInsets.all(0.0),
+                    value: ProductTypeEnum.Deliverable,
+                    groupValue: _productTypeEnum,
+                    title: Text(ProductTypeEnum.Deliverable.name),
+                    onChanged: (value) => setState(() {
+                          _productTypeEnum = value;
+                        })),
+              ),
+              Expanded(
+                child: RadioListTile(
+                    contentPadding: const EdgeInsets.all(0.0),
+                    value: ProductTypeEnum.Downloadable,
+                    groupValue: _productTypeEnum,
+                    title: Text(ProductTypeEnum.Downloadable.name),
+                    onChanged: (value) => setState(() {
+                          _productTypeEnum = value;
+                        })),
+              ),
+            ],
+          ),
 ```
 
 - **CheckBox**
@@ -745,9 +768,12 @@ class _FormDState extends State<FormD> {
         ));
   }
 }
-
 ```
 
 - **Dropdown**
+
+```dart
+
+```
 
 - **Form**

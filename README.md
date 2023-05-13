@@ -12,7 +12,13 @@ La première version de Flutter était connue sous le nom de code "Sky" et fonct
 
 ### REQUIREMENTS
 
+To install and run Flutter, your development environment must meet these minimum requirements: **Operating Systems: Windows 10 or later (64-bit), x86-64 based**.
+ Disk Space: 1.64 GB (does not include disk space for IDE/tools). Tools:
+ Flutter depends on these tools being available in your environment.
+
 ### INSTALLATION
+
+[Install | Flutter](https://docs.flutter.dev/get-started/install)
 
 ### TABLE OF CONTENT
 
@@ -28,9 +34,81 @@ La première version de Flutter était connue sous le nom de code "Sky" et fonct
 - https://www.youtube.com/@avcodes (UI Design)
 - https://www.youtube.com/@createdbykoko/videos (UI Design)
 - https://www.youtube.com/@CodexCommunity
+- https://www.youtube.com/@JeronDev
+- [Rabee Omran - YouTube](https://www.youtube.com/@RabeeOmran) (bloc inspiration to Learn other )
+- [doctor code - YouTube](https://www.youtube.com/@DoctorCode9/) flutter ui
+- https://www.youtube.com/@codeacad projects??
+- [Bilgun - YouTube](https://www.youtube.com/@Bilgune) (flutter project , news application,movie application ,ecommmerce)
+- [Mitch Koko - YouTube](https://www.youtube.com/@createdbykoko/videos) ( courses )
+- [Akshit Madan - YouTube](https://www.youtube.com/@AkshitMadan) (TOP)
+- https://www.youtube.com/@flutteruidev (TOP,news)
+- https://www.youtube.com/@CodingwithT (UI , Firebase)
 
     **WEBSITES**
 
 - https://docs.flutter.dev/
 - https://flutterbyexample.com/ (Learning tutorials)
-- https://fluttergems.dev/ (news,veille)
+- https://fluttergems.dev/ (news,veille,packages)
+- https://www.flutterbeads.com/
+
+### CLEAN ARCHITECTURE
+
+It is software design philosophy that separates the software system into layers of responsibility  such that the architecture remains maintanable  ,testable and extensible.
+
+[Flutter TDD Clean Architecture Course [1] – Explanation &amp; Project Structure - YouTube](https://www.youtube.com/watch?v=KjE2IDphA_U&list=PLB6lc7nQ1n4iYGE_khpXRdJkJEp9WOech&index=1) 
+
+### PRESENTATION LAYER
+
+It present app content,it handles the user interactions
+
+- page: application pages
+
+- State management: file remain to state management that we use
+
+- Widgets
+
+### DOMAIN LAYER
+
+only dart without flutter, business logic of the application, not affected by changes in outer layers
+
+- **Entities** : create based on data
+
+- **Repositories interfaces(abstract classes,contracts)**
+  
+  - **Use cases(Sign up,Login)** : class that encapsulate all business logic of a particular use cases of the app, it refers to a specific action or functionality that  a user can perform within an application. It represents a logical unit of work that an application can perform in response   to user's request or an event
+
+### DATA LAYER
+
+Responsable for data retrevial,Api call a server or local database
+
+- **repositories** : call data from differents data sources
+
+- **data sources** : Local or remote datasource.
+
+- **models** 
+
+![](./Screenshot%202023-04-25%20134708.png)
+
+- assets (icons,images,fonts)
+
+![](./Screenshot%202023-04-27%20030942.png)
+
+## PACKAGES
+
+- **SharedPreferences**
+
+SharedPreferences. shared_preferences is a Flutter plugin that **allows you to save data in a key-value format so you can easily retrieve it later**. Behind the scenes, it uses the aptly named SharedPreferences on Android and the similar UserDefaults on iOS.
+
+```dart
+saveData() async{
+    var shared = await SharedPreferences.getInstance();
+    shared.setBool("human",true);
+}
+
+receiveData() async{
+    var shared = await SharedPreferences.getInstance();
+    shared.getBool("human",true);
+}
+
+shared.remove("human");
+```
