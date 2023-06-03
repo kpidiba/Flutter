@@ -1,8 +1,8 @@
 # EQUATABLE
 
+ [equatable | Dart Package](https://pub.dev/packages/equatable) 
+
 Package use with bloc
-
-
 
 If you’ve been writing Dart, chances are you’ve had to override the `==` operator and `hashCode` in order to compare different instances of the same class.
 

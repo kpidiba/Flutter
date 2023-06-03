@@ -1,5 +1,7 @@
 # DARTZ
 
+[dartz | Dart Package](https://pub.dev/packages/dartz) 
+
 # EITHER Exception and error
 
 Handling error exception
