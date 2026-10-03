@@ -1,5 +1,5 @@
 void main() {
-  var result = factorial(7);
+  var result = factorial(4);
   print(result);
 }
 

@@ -6,19 +6,28 @@
 
 La première version de Flutter était connue sous le nom de code "Sky" et fonctionnait sur le [système d'exploitation](https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27exploitation "Système d'exploitation") [Android](https://fr.wikipedia.org/wiki/Android "Android"). Elle a été dévoilée lors du sommet des développeurs Dart de 2015[4](https://fr.wikipedia.org/wiki/Flutter_(logiciel)#cite_note-4), avec l'intention déclarée de pouvoir effectuer un rendu cohérent à 120 images par seconde[5](https://fr.wikipedia.org/wiki/Flutter_(logiciel)#cite_note-5) . Lors du discours d'ouverture des Google Developer Days à Shanghai, Google a annoncé la sortie de Flutter Release Preview 2 qui est la dernière grande version avant Flutter 1.0. Le 4 décembre 2018, Flutter 1.0 a été publié lors de l'événement Flutter Live, ce qui représente la première version "stable" du Framework. Le 11 décembre 2019, Flutter 1.12 a été publié lors de l'événement Flutter Interactive.
 
-### ROADMAP
-
-![](./FlutterRoadmap.png)
-
 ### REQUIREMENTS
 
 To install and run Flutter, your development environment must meet these minimum requirements: **Operating Systems: Windows 10 or later (64-bit), x86-64 based**.
  Disk Space: 1.64 GB (does not include disk space for IDE/tools). Tools:
  Flutter depends on these tools being available in your environment.
 
+### OFFICIAL DOCUMENTATION
+
+- https://dart.dev/
+
+- https://docs.flutter.dev/
+
+    **WEBSITES**
+
+- [https://docs.flutter.dev/](https://docs.flutter.dev/)
+- [https://flutterbyexample.com/](https://flutterbyexample.com/) (Learning tutorials)
+- [https://fluttergems.dev/](https://fluttergems.dev/) (news,veille,packages)
+- [https://www.flutterbeads.com/](https://www.flutterbeads.com/)
+
 ### INSTALLATION
 
-[Install | Flutter](https://docs.flutter.dev/get-started/install)
+- [Install | Flutter](https://docs.flutter.dev/get-started/install)
 
 ### TABLE OF CONTENT
 
@@ -28,6 +37,7 @@ To install and run Flutter, your development environment must meet these minimum
 
     **YOUTUBE**
 
+- **[YOUTUBE RESOURCE]([ReorderableListView widget - Flutter Widget of the week in Hindi/Urdu - YouTube](https://www.youtube.com/watch?v=JOeuo3AB83E&list=PLFyjjoCMAPtyjgH1Y2vBt4GlAd9FZ5xeh))**
 - https://www.youtube.com/@TheFlutterWay
 - [Flutter - YouTube](https://www.youtube.com/@flutterdev)
 - [Abdul Aziz Ahwan - YouTube](https://www.youtube.com/@abdulazizahwan)
@@ -47,15 +57,6 @@ To install and run Flutter, your development environment must meet these minimum
 - https://www.youtube.com/@RivaanRanawat 
 - [Coder Sangam - YouTube](https://www.youtube.com/@codersangam) bloc
 - [ZaitoonTech - YouTube](https://www.youtube.com/@zaitoontech) 
-
-    **WEBSITES**
-
-- https://docs.flutter.dev/
-- https://flutterbyexample.com/ (Learning tutorials)
-- https://fluttergems.dev/ (news,veille,packages)
-- https://www.flutterbeads.com/
-
-### CLEAN ARCHITECTURE
 
 It is software design philosophy that separates the software system into layers of responsibility  such that the architecture remains maintanable  ,testable and extensible.
 
@@ -94,25 +95,3 @@ Responsable for data retrevial,Api call a server or local database
 ![](./Screenshot%202023-04-25%20134708.png)
 
 - assets (icons,images,fonts)
-
-![](./Screenshot%202023-04-27%20030942.png)
-
-## PACKAGES
-
-- **SharedPreferences**
-
-SharedPreferences. shared_preferences is a Flutter plugin that **allows you to save data in a key-value format so you can easily retrieve it later**. Behind the scenes, it uses the aptly named SharedPreferences on Android and the similar UserDefaults on iOS.
-
-```dart
-saveData() async{
-    var shared = await SharedPreferences.getInstance();
-    shared.setBool("human",true);
-}
-
-receiveData() async{
-    var shared = await SharedPreferences.getInstance();
-    shared.getBool("human",true);
-}
-
-shared.remove("human");
-```

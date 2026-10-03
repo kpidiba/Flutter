@@ -8,6 +8,10 @@ class Person {
   void eating() {
     print("$name is eating");
   }
+  
+  Person copy@ith(String? name,String? gender, int? age){
+    return new Person(name: name ?? this.name,gender: gender ?? this.gender,age: age ?? this.age);
+  }
 
 }
 
