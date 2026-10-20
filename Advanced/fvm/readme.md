@@ -1,97 +1,106 @@
-# Future, async/await in Dart
+# FVM — Flutter Version Management
 
-## 1. Future
+**FVM (Flutter Version Management)** allows you to install and use **different Flutter versions per project**.
 
-A `Future<T>` represents a value that will be available **later**.
+## 1. Install FVM
 
-```dart
-Future<String> getUserName() async {
-  return "David";
-}
+```bash
+dart pub global activate fvm
 ```
 
-The result is not immediately available.
+Check:
 
----
-
-## 2. async
-
-`async` indicates that a function performs asynchronous work and returns a `Future`.
-
-```dart
-Future<void> loadData() async {
-  // asynchronous work
-}
+```bash
+fvm --version
 ```
 
 ---
 
-## 3. await
+## 2. Install a Flutter version
 
-`await` waits for a `Future` to complete.
-
-```dart
-Future<String> getUserName() async {
-  return "David";
-}
-
-Future<void> main() async {
-  final name = await getUserName();
-
-  print(name);
-}
+```bash
+fvm install 3.35.0
 ```
 
-`await` can only be used inside an `async` function.
+Or use a channel:
+
+```bash
+fvm install stable
+```
 
 ---
 
-## 4. Real example
+## 3. Set the Flutter version for a project
 
-```dart
-Future<String> fetchData() async {
-  await Future.delayed(Duration(seconds: 2));
+Inside your project:
 
-  return "Data loaded";
-}
-
-Future<void> main() async {
-  print("Loading...");
-
-  final result = await fetchData();
-
-  print(result);
-}
+```bash
+fvm use 3.35.0
 ```
 
-Output:
+This creates:
 
 ```text
-Loading...
-// waits 2 seconds
-Data loaded
+.fvm/
+└── flutter_sdk
+```
+
+The project now uses this Flutter version.
+
+---
+
+## 4. Run Flutter commands with FVM
+
+Instead of:
+
+```bash
+flutter run
+```
+
+Use:
+
+```bash
+fvm flutter run
+```
+
+Examples:
+
+```bash
+fvm flutter pub get
+fvm flutter build apk
+fvm flutter test
 ```
 
 ---
 
-## 5. Error handling
+## 5. Check the version
 
-Use `try/catch` for asynchronous errors:
+```bash
+fvm flutter --version
+```
 
-```dart
-try {
-  final data = await fetchData();
-  print(data);
-} catch (e) {
-  print("Error: $e");
-}
+---
+
+## 6. Why use FVM?
+
+```text
+Without FVM:
+Project A → Flutter 3.x
+Project B → Flutter 3.y
+→ version conflicts
+
+With FVM:
+Project A → its own Flutter version
+Project B → another Flutter version
+→ isolated projects
 ```
 
 ### Remember
 
 ```text
-Future → result available later
-async  → function can use await
-await  → wait for a Future
-try/catch → handle errors
+fvm install → install a Flutter version
+fvm use     → assign version to project
+fvm flutter → run Flutter commands
+fvm list → check Flutter SDK Version
+fvm releases → SDK releases.
 ```
