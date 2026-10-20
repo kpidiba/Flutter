@@ -137,7 +137,7 @@ String? name;
 
 name ??= "Guest";
 
-print(name);
+5print(name);
 ```
 
 Output:
@@ -252,7 +252,7 @@ if (isAdult && hasId) {  print("Allowed");}
 
 ## 8. `!` Has Two Meanings
 
-Don't confuse these two uses.
+5Don't confuse these two uses.
 
 ### Logical NOT
 
@@ -309,4 +309,4 @@ name!.length;               // "I guarantee it's not null"
 
 **Rule of thumb:** Prefer `?.` and `??` for safe null handling. Use `!` only when you genuinely know the value cannot be null.
 
-Keep exploring Dart null safety
+Keep exploring Dart null safety  
